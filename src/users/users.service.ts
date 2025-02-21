@@ -10,6 +10,8 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcrypt';
+const saltRounds = 10;
+
 @Injectable()
 export class UsersService {
   constructor(
@@ -22,7 +24,6 @@ export class UsersService {
     createUserDto: CreateUserDto,
   ): Promise<{ user: User; token: string }> {
     try {
-      const saltRounds = 10;
       const hashedPassword = await bcrypt.hash(
         createUserDto.password,
         saltRounds,
@@ -57,6 +58,13 @@ export class UsersService {
     if (!user) {
       throw new NotFoundException(`User with id ${id} not found`);
     }
+    if (updateUserDto.password) {
+      updateUserDto.password = await bcrypt.hash(
+        updateUserDto.password,
+        saltRounds,
+      );
+    }
+
     Object.assign(user, updateUserDto);
     return await this.usersRepository.save(user);
   }

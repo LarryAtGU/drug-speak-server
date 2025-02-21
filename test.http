@@ -18,3 +18,14 @@ Content-Type: application/json
   "email": "john6@example.com",
   "password": "securepassword"
 }
+
+
+### Update user details
+PATCH http://localhost:3000/users/update 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkZWQwYmZiYy0yYmIzLTQ2NWItOTk1OC03M2FjMjI3MjVkNmQiLCJlbWFpbCI6ImpvaG42QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQwMTE4ODkyfQ.-99VQKKse3XnhbYKp89GZIpaCyvdyBHCznNdmS8FCjU
+Content-Type: application/json
+
+{
+"username":"newName",
+"password":"newpassword"  
+}
