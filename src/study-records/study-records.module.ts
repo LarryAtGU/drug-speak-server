@@ -1,9 +1,13 @@
+// src/study-record/study-record.module.ts
 import { Module } from '@nestjs/common';
-import { StudyRecordsService } from './study-records.service';
-import { StudyRecordsController } from './study-records.controller';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { StudyRecord } from './entities/study-records.entity';
+import { StudyRecordService } from './study-records.service';
+import { StudyRecordController } from './study-records.controller';
 
 @Module({
-  providers: [StudyRecordsService],
-  controllers: [StudyRecordsController]
+  imports: [TypeOrmModule.forFeature([StudyRecord])],
+  providers: [StudyRecordService],
+  controllers: [StudyRecordController],
 })
-export class StudyRecordsModule {}
+export class StudyRecordModule {}
