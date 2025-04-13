@@ -1,6 +1,6 @@
 # Drug Speak Server
 
-This repository contains the server-side application for **Drug Speak**, an assignment project for the following courses:
+This repository contains the server-side application for **Drug Speak**, an assignment project for the following courses in [Griffith University](https://www.griffith.edu.au):
 
 - Mobile Application Development (3701ICT)
 - Mobile Device Software Development (7421ICT)
@@ -35,6 +35,14 @@ $ cd drug-speak-server
 $ npm install
 ```
 
+## Environment Variables
+
+It is optinal to create a .env file in the root directory with contents similar to:
+
+```env
+JWT_SECRET=YourSecretKey
+```
+
 ## Compile and run the project
 
 ```bash
@@ -48,7 +56,7 @@ $ npm run start:dev
 
 ## API documentation
 
-After the project is started, open browser and enter http://localhost:3000/ to check the API documentation.
+After starting the project, open your browser and go to http://localhost:3000/. The root URL is automatically redirected to the Swagger UI where you can interact with the API documentation.
 
 ## Run tests
 
@@ -69,4 +77,4 @@ $ npm run test:cov
 
 ## License
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+This project is licensed under the MIT License. [MIT licensed](https://github.com/LarryAtGU/drug-speak-server/LICENSE).
