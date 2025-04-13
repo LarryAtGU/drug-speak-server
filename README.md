@@ -77,4 +77,4 @@ $ npm run test:cov
 
 ## License
 
-This project is licensed under the MIT License. [MIT licensed](https://github.com/LarryAtGU/drug-speak-server/LICENSE).
+This project is licensed under the MIT License. [MIT licensed](https://github.com/LarryAtGU/drug-speak-server/blob/main/LICENSE).
