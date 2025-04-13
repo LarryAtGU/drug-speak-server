@@ -26,7 +26,7 @@ async function bootstrap() {
   const server = app.getHttpAdapter().getInstance();
 
   // Redirect the root path to the Swagger UI
-  server.get('/', (req, res) => {
+  server.get('/', (_: any, res: { redirect: (arg0: string) => void }) => {
     res.redirect('/api-doc');
   });
 
