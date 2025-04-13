@@ -19,7 +19,7 @@ export class StudyRecord {
   totalScore: number;
 
   // Define a one-to-one relationship to the User entity.
-  @OneToOne(() => User)
+  @OneToOne(() => User, { onDelete: 'CASCADE' })
   @JoinColumn({ name: 'userId' })
   user: User;
 }

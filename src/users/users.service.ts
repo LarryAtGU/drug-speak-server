@@ -79,4 +79,23 @@ export class UsersService {
   async findByEmail(email: string): Promise<User> {
     return await this.usersRepository.findOne({ where: { email } });
   }
+  /**
+   * Delete a user by given id.
+   * @param id - The id of the user to delete
+   * @returns A message confirming deletion
+   */
+  async deleteUser(id: string): Promise<{ message: string }> {
+    // Find the user by its id
+    const user = await this.usersRepository.findOne({ where: { id } });
+
+    // If the user doesn't exist, throw a NotFoundException
+    if (!user) {
+      throw new NotFoundException(`User with id ${id} not found`);
+    }
+
+    // Delete the user
+    await this.usersRepository.remove(user);
+
+    return { message: 'User deleted successfully' };
+  }
 }

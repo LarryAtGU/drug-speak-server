@@ -51,3 +51,7 @@ Content-Type: application/json
 ### get study record of a user use para
 GET http://localhost:3000/study-record/bc988245-ce8d-491a-8142-4e0697e3bba6 
 Content-Type: application/json
+
+### delete a user by id
+DELETE http://localhost:3000/users/bc988245-ce8d-491a-8142-4e0697e3bba6	 
+Content-Type: application/json

@@ -5,6 +5,8 @@ import {
   Body,
   Request,
   UseGuards,
+  Delete,
+  Param,
 } from '@nestjs/common';
 import {
   ApiTags,
@@ -76,5 +78,14 @@ export class UsersController {
   @UseGuards(AuthGuard('jwt'))
   update(@Request() req, @Body() updateUserDto: UpdateUserDto) {
     return this.usersService.update(req.user.id, updateUserDto);
+  }
+
+  @ApiOperation({
+    summary:
+      "Delete a user by userID, this is for e2e test only, you don't need to use it for your application building.",
+  })
+  @Delete(':userId')
+  async deleteUserById(@Param('userId') userId: string) {
+    return await this.usersService.deleteUser(userId);
   }
 }
