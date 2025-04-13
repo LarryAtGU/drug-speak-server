@@ -20,7 +20,15 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
 
   // Set up Swagger module at the /api path
-  SwaggerModule.setup('api', app, document);
+  SwaggerModule.setup('api-doc', app, document);
+
+  // Access the underlying Express instance
+  const server = app.getHttpAdapter().getInstance();
+
+  // Redirect the root path to the Swagger UI
+  server.get('/', (req, res) => {
+    res.redirect('/api-doc');
+  });
 
   await app.listen(3000);
 }
