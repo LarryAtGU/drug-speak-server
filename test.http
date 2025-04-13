@@ -4,9 +4,8 @@ Content-Type: application/json
 
 {
   "username": "john_doe",
-  "email": "john@example.com",
-  "password": "securepassword",
-  "gender":"male"
+  "email": "john8@example.com",
+  "password": "securepassword"
 }
 
 
@@ -26,7 +25,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiYzk4ODI0N
 Content-Type: application/json
 
 {
-"username":"newName",
+"username":"newNamexx",
 "password":"newpassword"  
 }
 

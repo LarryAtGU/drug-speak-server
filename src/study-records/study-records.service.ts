@@ -45,6 +45,9 @@ export class StudyRecordService {
 
   // Retrieve all study records (with joined User info)
   async getAllRecords(): Promise<StudyRecord[]> {
+    await new Promise((res) => {
+      setTimeout(() => res(1), 2000);
+    });
     return await this.studyRecordRepository.find({
       relations: ['user'],
     });
