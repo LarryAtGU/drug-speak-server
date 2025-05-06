@@ -8,10 +8,16 @@ import { StudyRecordModule } from './study-records/study-records.module';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
-      type: 'sqlite',
+      type: 'better-sqlite3',
       database: 'db.sqlite',
+      // optional tuning…
+      statementCacheSize: 200,
+      prepareDatabase: (db) => {
+        db.pragma('foreign_keys = ON');
+        return db;
+      },
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
-      synchronize: true, // Set to false in production
+      synchronize: true,
     }),
     UsersModule,
     AuthModule,
