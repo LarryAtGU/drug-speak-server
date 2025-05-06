@@ -32,7 +32,19 @@ The project is built using [NestJS](https://nestjs.com/) and utilizes [TypeORM](
 ```bash
 $ git clone https://github.com/LarryAtGU/drug-speak-server
 $ cd drug-speak-server
-$ npm install
+$ node -v
+```
+
+If your node version is 20 or less, then you need to switch branch
+
+```bash
+$ git checkout legacy-sqlite3
+```
+
+## Install Dependencies
+
+```bash
+npm install
 ```
 
 ## Environment Variables
@@ -78,3 +90,8 @@ $ npm run test:cov
 ## License
 
 This project is licensed under the MIT License. [MIT licensed](https://github.com/LarryAtGU/drug-speak-server/blob/main/LICENSE).
+
+## Node-version compatibility
+
+- **legacy-sqlite3** (branch) — uses `sqlite3`, supports Node ≤ 20
+- **main** (branch) — uses `better-sqlite3`, requires Node ≥ 21
