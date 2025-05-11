@@ -38,7 +38,7 @@ $ node -v
 If your node version is 20 or less, then you need to
 
 ```bash
-$ git checkout legacy-sqlite3
+$ git checkout -b legacy-sqlite3 origin/legacy-sqlite3
 ```
 
 ## Install Dependencies
